@@ -14,7 +14,7 @@ namespace WeatherParser
 		public float Pressure;
 	}
 
-	class Program
+	public class Program
 	{
 		static void Main()
 		{
