@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Factory="System.ServiceModel.Activation.WebServiceHostFactory" Service="TestRestService.TestRestService" CodeBehind="TestRestService.svc.cs" %>
