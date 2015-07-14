@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BAE194AB-CBDF-48AB-9CB9-B6F64F9279CF}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RitOptMarket</RootNamespace>
+    <AssemblyName>RitOptMarket</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
+    <Compile Include="Controllers\GuaranteeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coffin.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Stuff.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Coffins\B\B4_N.jpg" />
+    <Content Include="Images\Coffins\B\Б-4 %28сосна%29 белый.jpg" />
+    <Content Include="Images\Coffins\B\Б-6 %28сосна%29 белый глянец.jpg" />
+    <Content Include="Images\Coffins\B\Б-6 %28сосна%29 светлый глянец.jpg" />
+    <Content Include="Images\Coffins\B\Б-6 %28сосна%29 тёмный матовый.jpg" />
+    <Content Include="Images\Coffins\Child_900x600\Child_carp.jpg" />
+    <Content Include="Images\Coffins\Child_900x600\Child_classic_1.jpg" />
+    <Content Include="Images\Coffins\Child_900x600\Child_classic_2.jpg" />
+    <Content Include="Images\Coffins\Child_900x600\Child_classic_3.jpg" />
+    <Content Include="Images\Coffins\Child_900x600\Child_standart_1.jpg" />
+    <Content Include="Images\Coffins\Child_900x600\Child_standart_2.jpg" />
+    <Content Include="Images\Coffins\Combi\combi_4gr_blk-bord.jpg" />
+    <Content Include="Images\Coffins\Combi\combi_4_rose-wh.jpg" />
+    <Content Include="Images\Coffins\Combi\combi_6gr_blk-gld.jpg" />
+    <Content Include="Images\Coffins\Combi\combi_6gr_parcha.jpg" />
+    <Content Include="Images\Coffins\Econom\6grannik_ekonom.jpg" />
+    <Content Include="Images\Coffins\Econom\6gr_ekonom_wh.jpg" />
+    <Content Include="Images\Coffins\Grand_900x600\Grand_1.jpg" />
+    <Content Include="Images\Coffins\Grand_900x600\Grand_2.jpg" />
+    <Content Include="Images\Coffins\Grand_900x600\Grand_3.jpg" />
+    <Content Include="Images\Coffins\Koloda\koloda_4gr_tem_N.jpg" />
+    <Content Include="Images\Coffins\Pegas_900x600\Пегас 2-х крышечник,резной.jpg" />
+    <Content Include="Images\Coffins\Pegas_900x600\Пегас 2-х крышечник.jpg" />
+    <Content Include="Images\Coffins\Pegas_900x600\Пегас шестигранный ,матовый.jpg" />
+    <Content Include="Images\Coffins\Pegas_900x600\Пегас,восьмигранный,2-х крышечный,матовый,резной.jpg" />
+    <Content Include="Images\Coffins\Pegas_900x600\Пегас,восьмигранный,матовый.jpg" />
+    <Content Include="Images\Coffins\Pegas_900x600\Пегас,матовый.jpg" />
+    <Content Include="Images\Coffins\Pegas_900x600\Пегас,шестигранный ,матовый.jpg" />
+    <Content Include="Images\Coffins\Piter_900x600\piter_4gr.jpg" />
+    <Content Include="Images\Coffins\Piter_900x600\piter_6gr.jpg" />
+    <Content Include="Images\Coffins\Piter_900x600\piter_6gr_clr.jpg" />
+    <Content Include="Images\Coffins\Piter_900x600\Piter_ba.jpg" />
+    <Content Include="Images\Coffins\Piter_900x600\Питер 5.jpg" />
+    <Content Include="Images\Coffins\Piter_900x600\Питер шестигранник 6.jpg" />
+    <Content Include="Images\Coffins\Vegas_900x600\Vegas_1.jpg" />
+    <Content Include="Images\Coffins\Vegas_900x600\Vegas_2.jpg" />
+    <Content Include="Images\Coffins\Vegas_900x600\Vegas_3.jpg" />
+    <Content Include="Images\Coffins\Vegas_900x600\Vegas_4.jpg" />
+    <Content Include="Images\Coffins\Vegas_900x600\Vegas_5.jpg" />
+    <Content Include="Images\Crosses\cross_dome.jpg" />
+    <Content Include="Images\Crosses\cross_dome_preview.jpg" />
+    <Content Include="Images\Crosses\cross_gold.jpg" />
+    <Content Include="Images\Crosses\cross_gold_preview.jpg" />
+    <Content Include="Images\Crosses\cross_pagan.jpg" />
+    <Content Include="Images\Crosses\cross_pagan_preview.jpg" />
+    <Content Include="Images\Crosses\cross_standart.jpg" />
+    <Content Include="Images\Crosses\cross_standart_preview.jpg" />
+    <Content Include="Images\Crosses\cross_venz.jpg" />
+    <Content Include="Images\Crosses\cross_venz_preview.jpg" />
+    <Content Include="Images\Crosses\cross_zav.jpg" />
+    <Content Include="Images\Crosses\cross_zav_preview.jpg" />
+    <Content Include="Images\Other\Cover.jpg" />
+    <Content Include="Images\Other\Shirt.jpg" />
+    <Content Include="Images\Stripes\110 см ерш.jpg" />
+    <Content Include="Images\Stripes\110 см комби.jpg" />
+    <Content Include="Images\Stripes\125 см ерш.jpg" />
+    <Content Include="Images\Stripes\125 см комби.jpg" />
+    <Content Include="Images\Stripes\140 см ерш.jpg" />
+    <Content Include="Images\Stripes\140 см комби.jpg" />
+    <Content Include="Images\Stripes\160 см ерш.jpg" />
+    <Content Include="Images\Stripes\160 см комби.jpg" />
+    <Content Include="Images\Stripes\180 см ерш.jpg" />
+    <Content Include="Images\Stripes\180 см комби.jpg" />
+    <Content Include="Images\Stripes\80 см ерш.jpg" />
+    <Content Include="Images\Stripes\80 см комби.jpg" />
+    <Content Include="Images\Stripes\90 см ерш.jpg" />
+    <Content Include="Images\Stripes\90 см комби.jpg" />
+    <Content Include="Images\Stripes\капля ерш.jpg" />
+    <Content Include="Images\Stripes\капля комби.jpg" />
+    <Content Include="Images\Stripes\колесо ерш.jpg" />
+    <Content Include="Images\Stripes\круг ерш.jpg" />
+    <Content Include="Images\Stripes\круг комби.jpg" />
+    <Content Include="Images\Stripes\ладья большая ерш.jpg" />
+    <Content Include="Images\Stripes\ладья большая комби.jpg" />
+    <Content Include="Images\Stripes\Ладья малая ерш.jpg" />
+    <Content Include="Images\Stripes\ладья малая комби.jpg" />
+    <Content Include="Images\Stripes\ладья средняя ерш.jpg" />
+    <Content Include="Images\Stripes\полуваза Аура ерш.jpg" />
+    <Content Include="Images\Stripes\полуваза ерш.jpg" />
+    <Content Include="Images\Stripes\полуваза комби.jpg" />
+    <Content Include="Images\Stripes\Саша без ручки комби.jpg" />
+    <Content Include="Images\Stripes\Саша с ручкой комби.jpg" />
+    <Content Include="Images\Stripes\стульчик ерш.jpg" />
+    <Content Include="Images\Stripes\стульчик комби.jpg" />
+    <Content Include="Images\Stripes\Тамара без ручки.jpg" />
+    <Content Include="Images\Stripes\Тамара с ручкой комби.jpg" />
+    <Content Include="Images\Stripes\Тамара с ручкой.jpg" />
+    <Content Include="Content\wreaths.pdf" />
+    <Content Include="Content\crosseswood.pdf" />
+    <Content Include="Content\coffinscloth.pdf" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\RitOptMarket.pubxml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\menu.js" />
+    <Content Include="Scripts\modernizir.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Delivery\Index.cshtml" />
+    <Content Include="Views\Guarantee\Index.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Catalog\Index.cshtml" />
+    <Content Include="Views\Catalog\Flowers.cshtml" />
+    <Content Include="Views\Catalog\Other.cshtml" />
+    <Content Include="Views\Catalog\WoodenCrosses.cshtml" />
+    <Content Include="Views\Catalog\IronCrosses.cshtml" />
+    <Content Include="Views\Catalog\Stripes.cshtml" />
+    <Content Include="Views\Catalog\CoffinsCombined.cshtml" />
+    <Content Include="Views\Catalog\CoffinsCloth.cshtml" />
+    <Content Include="Views\Catalog\Backgrounds.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2243</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2235/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

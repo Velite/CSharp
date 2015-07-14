@@ -1,0 +1,116 @@
+﻿@using RitOptMarket.Models
+@section breadcrumbs
+{
+	<div class="container">
+		<ol class="breadcrumb">
+			<li>@Html.ActionLink("Главная", "Index", "Home")</li>
+			<li>Каталог</li>
+			<li class="active">@ViewBag.Title</li>
+		</ol>
+	</div>
+}
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">@ViewBag.Title</h2>
+		</div>
+		<div class="panel-body">
+			<article>
+				Для оформления заказа просто @Html.ActionLink("свяжитесь с нами", "Index", "Contacts") любым удобным для Вас способом.
+			</article>
+			<br />
+			<div class="row">
+				@{
+					int i = 0;
+					foreach (Stuff stuff in Model)
+					{
+						bool isSmallClear = (i + 1) % 2 == 0;
+						bool isMediumClear = (i + 1) % 3 == 0;
+						bool isLargeClear = (i + 1) % 4 == 0;
+
+						<div class="col-sm-6 col-md-4 col-lg-3">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<strong class="panel-title">@stuff.Name</strong>
+								</div>
+								<div class="panel-body">
+									<a href="javascript:;" onclick="javascript: show({title: '@stuff.Name', imgUrl: '@stuff.ImageUrl'});" class="thumbnail">
+										<img alt="@stuff.Name" src="@stuff.ImageUrl" class="img-responsive" />
+									</a>
+									<table>
+										<tbody>
+											<tr>
+												<td style="text-align: right"><strong>Категория:</strong></td>
+												<td style="text-align: left; padding-left: 10px">@stuff.Category</td>
+											</tr>
+											<tr>
+												<td style="text-align: right"><strong>Модель:</strong></td>
+												<td style="text-align: left; padding-left: 10px">@stuff.Model</td>
+											</tr>
+											<tr>
+												<td style="text-align: right"><strong>Цвет:</strong></td>
+												<td style="text-align: left; padding-left: 10px">@stuff.Color</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panel-footer">
+									<strong class="text-success">Цена: @stuff.Price р.</strong>
+								</div>
+							</div>
+						</div>
+
+						if (isSmallClear)
+						{
+							@:<div class="clearfix visible-sm"></div>
+						}
+
+						if (isMediumClear)
+						{
+							@:<div class="clearfix visible-md"></div>
+						}
+
+						if (isLargeClear)
+						{
+							@:<div class="clearfix visible-lg"></div>
+						}
+
+						i++;
+					}
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel"></h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="thumbnail">
+						<img id="myModalImage" alt="" src="" class="img-responsive" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section scripts
+{
+	<script type="text/javascript">
+		function show(options) {
+			$("#myModalLabel").get(0).innerText = options.title;
+			$("#myModalImage").get(0).src = options.imgUrl;
+
+			$("#myModal").modal();
+		}
+	</script>
+}

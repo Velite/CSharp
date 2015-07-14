@@ -1,0 +1,24 @@
+﻿@section breadcrumbs
+{
+	<div class="container">
+		<ol class="breadcrumb">
+			<li>@Html.ActionLink("Главная", "Index", "Home")</li>
+			<li class="active">@ViewBag.Title</li>
+		</ol>
+	</div>
+}
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">@ViewBag.Title</h2>
+		</div>
+		<div class="panel-body">
+			<article>
+				<p style="text-align: justify">
+					@Html.Raw(ViewBag.Message)
+				</p>
+			</article>
+		</div>
+	</div>
+</div>

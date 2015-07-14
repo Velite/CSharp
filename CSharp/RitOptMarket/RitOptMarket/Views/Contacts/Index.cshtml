@@ -1,0 +1,52 @@
+﻿@section breadcrumbs
+{
+	<div class="container">
+		<ol class="breadcrumb">
+			<li>@Html.ActionLink("Главная", "Index", "Home")</li>
+			<li class="active">@ViewBag.Title</li>
+		</ol>
+	</div>
+}
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">@ViewBag.Title</h2>
+		</div>
+		<div class="panel-body">
+			<address>
+				<strong>Диспетчерская служба:</strong>
+				<p>
+					<ul>
+						<li>
+							+7(910)434-51-64
+						</li>
+						<li>
+							+7(915)680-61-61
+						</li>
+						<li>
+							+7(909)675-31-16
+						</li>
+					</ul>
+				</p>
+			</address>
+			<address>
+				<strong>Почта</strong>
+				<p>
+					<ul>
+						<li>
+							<a href="mailto:ritoptmarket@mail.ru">РитОптМаркет</a>
+						</li>
+					</ul>
+				</p>
+			</address>
+			<address>
+				<p>
+					<div class="center-block text-center">
+						<img class="img-thumbnail" alt="" src="http://static-maps.yandex.ru/1.x/?ll=37.620070,55.753630&z=12&size=450,450&l=map">
+					</div>
+				</p>
+			</address>
+		</div>
+	</div>
+</div>

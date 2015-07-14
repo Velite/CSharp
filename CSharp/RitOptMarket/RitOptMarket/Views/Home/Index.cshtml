@@ -1,0 +1,23 @@
+﻿@section breadcrumbs
+{
+	<div class="container">
+		<ol class="breadcrumb">
+			<li class="active">Главная</li>
+		</ol>
+	</div>
+}
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">Добро пожаловать на сайт компании «РитОптМаркет»</h2>
+		</div>
+		<div class="panel-body">
+			<article>
+				<p style="text-align: justify; font-size: 14px">
+					@Html.Raw(ViewBag.Message)
+				</p>
+			</article>
+		</div>		
+	</div>
+</div>

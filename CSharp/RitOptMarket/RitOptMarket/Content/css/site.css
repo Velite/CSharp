@@ -1,0 +1,12 @@
+﻿.nav-menu ul li {
+	list-style: none;
+	list-style-type: none;
+}
+
+.nav-menu ul {
+	width: auto !important;
+}
+
+.nav-menu ul ul {
+	width: auto !important;
+}

@@ -1,0 +1,24 @@
+﻿@section breadcrumbs
+{
+	<div class="container">
+		<ol class="breadcrumb">
+			<li>@Html.ActionLink("Главная", "Index", "Home")</li>
+			<li>Каталог</li>
+			<li>Гробы</li>
+			<li class="active">@ViewBag.Title</li>
+		</ol>
+	</div>
+}
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title">@ViewBag.Title</h2>
+		</div>
+		<div class="panel-body">
+			<article>
+				Для оформления заказа просто @Html.ActionLink("свяжитесь с нами", "Index", "Contacts") любым удобным для Вас способом.
+			</article>
+		</div>
+	</div>
+</div>

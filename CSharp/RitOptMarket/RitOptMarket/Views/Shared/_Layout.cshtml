@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="Velite">
+		<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		@Styles.Render("~/Content/css/bootstrap")
+		@Styles.Render("~/Content/css/site")   
+		@Scripts.Render("~/bundles/modernizir")
+		<title>РитОптМаркет - @ViewBag.Title</title>
+	</head>
+	<body>
+		<header>
+			<div class="container-fluid">
+				<div class="nav-menu" style="display: none">
+					<ul>
+						<li id="Home">@Html.ActionLink("Главная", "Index", "Home")</li>
+						<li>
+							<a href="#">Каталог</a>
+							<ul>
+								<li>
+									<a href="#">Гробы >></a>
+									<ul>
+										<li>@Html.ActionLink("Лакированные", "Index", "Catalog")</li>
+										<li>@Html.ActionLink("Комбинированные", "CoffinsCombined", "Catalog")</li>
+										<li>@Html.ActionLink("Обитые тканью", "CoffinsCloth", "Catalog")</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Кресты >></a>
+									<ul>
+										<li>@Html.ActionLink("Металлические", "IronCrosses", "Catalog")</li>
+										<li>@Html.ActionLink("Сосновые", "WoodenCrosses", "Catalog")</li>
+										<li>@Html.ActionLink("Дубовые", "WoodenCrosses", "Catalog")</li>
+									</ul>
+								</li>
+								<li>@Html.ActionLink("Венки", "Flowers", "Catalog")</li>
+								<li>@Html.ActionLink("Ленты", "Stripes", "Catalog")</li>
+								<li>@Html.ActionLink("Фоны", "Backgrounds", "Catalog")</li>
+								<li>@Html.ActionLink("Прочее", "Other", "Catalog")</li>
+							</ul>
+						</li>
+						<li id="Payment">@Html.ActionLink("Оплата", "Index", "Payment")</li>
+						<li id="Delivery">@Html.ActionLink("Доставка", "Index", "Delivery")</li>
+						<li id="Guarantee">@Html.ActionLink("Гарантия", "Index", "Guarantee")</li>
+						<li id="About">@Html.ActionLink("О компании", "Index", "About")</li>
+						<li id="Contacts">@Html.ActionLink("Контакты", "Index", "Contacts")</li>
+					</ul>
+				</div>
+			</div>
+			
+			@RenderSection("breadcrumbs", false)
+		</header>
+
+		<div id="body" role="main">
+			@RenderBody()
+		</div>
+		
+		<footer>
+			<div class="container">
+				<hr />
+				<p class="pull-right"><a href="#">Наверх</a></p>
+				<p>&copy; @DateTime.Now.Year - РитОптМаркет</p>
+			</div>
+		</footer>
+
+		@Scripts.Render("~/bundles/jquery")
+		@Scripts.Render("~/bundles/menu")
+		@Scripts.Render("~/bundles/bootstrap")
+
+		<script type="text/javascript">
+			$(document).ready(function ()
+			{
+				$(".nav-menu").jlnav({
+					nav_font: '15px arial,sans-serif',
+					nav_width: '100%',
+					nav_padding: '0 20px',
+					nav_margin: '0px auto 20px auto',
+					nav_shadow_rgba: '0, 0, 0, 0.4',
+					nav_shadow_width: '0px 1px 2px 0px',
+					nav_text_color: 'eee',
+					nav_bgcolor: '222',
+
+					subnav_font: '13px arial,sans-serif',
+					subnav_bgcolor: 'f9f9f9',
+					subnav_text_color: '444',
+					subnav_hover_bgcolor: 'f9f9f9',
+
+					subnav_hover_text_color: '373737',
+					subnav_focus_bgcolor: 'efefef',
+					subnav_border_color: 'ddd'
+				});
+				$(".nav-menu").show();
+			});
+		</script>
+
+		@RenderSection("scripts", required: false)
+	</body>
+
+</html>
